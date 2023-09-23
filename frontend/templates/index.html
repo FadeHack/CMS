@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Homepage Section -->
+    <div class="homepage">
+        <!-- Hero Section with Image -->
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner banner">
+                <div class="carousel-item active">
+                    <img src="{{ url_for('static', filename='images/l.jpg') }}" class="d-block h-20 w-100" alt="..." height="450">
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <!-- Service Cards Section -->
+        <section class="service-cards">
+            <div class="container">
+                <div class="row">
+                    {% for service in features %}
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-card">
+                                <img src="{{ url_for('static', filename='images/' + service.image) }}" alt="{{ service.title }}">
+                                <h3>{{ service.title }}</h3>
+                                <p>{{ service.description }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <!-- Notice Section -->
+        <section class="notice">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="{{ url_for('static', filename='images/courtR.jpg') }}" alt="Notice Image">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="notice-text">
+                            <h4>Important Notice</h4>
+                            <p>This is the notice text. It can contain important information or updates.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

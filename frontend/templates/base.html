@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Title Here</title>
+
+    <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+<body>
+    <!-- Common header, navigation, or other elements go here -->
+    <!-- ======= Top Bar ======= -->
+    <section id="topbar" class="d-flex align-items-center">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+            <div class="contact-info d-flex align-items-center">
+                Language : &nbsp;
+                <div class="toggle-button-cover">
+                    <div class="button-cover">
+                        <div class="button b2" id="button-10">
+                            <input type="checkbox" class="checkbox">
+                            <div class="knobs">
+                                <span>English</span>
+                            </div>
+                            <div class="layer"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i> -->
+
+                <!-- <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label> -->
+            </div>
+            <div class="social-links d-none d-md-flex align-items-center">
+                <a href="#" class="twitter"><i class='bx bx-font'></i></a>
+                <a href="#" class="facebook"><i class='bx bx-font-size'></i></a>
+                <a href="#" class="instagram"><i class='bx bx-font-family'></i></a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-8">
+                    <a href="/" class="logo"><img src="{{ url_for('static', filename='images/sj.png') }}" alt="">
+                    </a>
+                </div>
+                <div class="col-md-5 col-2">
+                    <a href="/" class="logo float-end"><<img src="{{ url_for('static', filename='images/f1.png') }}" alt="">
+                    </a>
+                </div>
+                <div class="col-md-1 col-2">
+
+                    <a href="/login" class="btn float-end" style="background-color: #11486b; color:#fff"><small>Log In</small></a>
+                </div>
+                <div class="col-md-1 col-2">
+
+                    <a href="/register" class="btn float-end" style="background-color: #11486b; color:#fff"><small>Sign Up</small></a>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <header id="" class="d-flex align-items-center bg-theram">
+        <div class="container d-flex align-items-center justify-content-between">
+
+
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto text-uppercase" href="#hero">Home</a></li>
+                    <li class="dropdown text-uppercase"><a href="#"><span>About</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="#"> About MeitY</a></li>
+                            <li><a href="#">About Digital India</a></li>
+                            <li><a href="#">CSC 2.0 Scheme</a></li>
+                            <!-- <li><a href="#">About CSC e-Governance Services India Limited</a></li> -->
+
+
+
+                        </ul>
+                    </li>
+                    <li class="dropdown text-uppercase"><a href="#"><span>Partners</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="#">
+                                    State Designated Agency (SDA)</a></li>
+                            <li><a href="#">Village Level Entrepreneur</a></li>
+                            <!-- <li><a href="#"> Partner Banks</a></li> -->
+
+                        </ul>
+                    </li>
+                    <!-- <li class="dropdown text-uppercase"><a href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="#"> Government to Citizen</a></li>
+                  <li><a href="#">Business to Citizen</a></li>
+                  <li><a href="#"> Financial Inclusion</a></li>
+                  <li><a href="#">Education</a></li>
+                  <li><a href="#">Agriculture</a></li>
+                  <li><a href="#">Health</a></li>
+                  <li><a href="#">Grameen e-Store</a></li>
+                  <li><a href="#">Tours and Travels</a></li>
+                 
+                </ul>
+              </li> -->
+                    <li class="dropdown text-uppercase"><a href="#"><span>Resources</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="#"> CSC 2.0 Implementation Guidelines</a></li>
+                            <!-- <li><a href="#">Common Branding CSC 2.0</a></li> -->
+                            <li><a href="#"> Right to Information</a></li>
+                            <li><a href="#">FAQ's</a></li>
+                            <!-- <li><a href="#">Grievance Redressal Mechanism</a></li> -->
+
+                        </ul>
+                    </li>
+                    <!-- <li class="dropdown text-uppercase"><a href="#"><span>media</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="#"> CSC Events</a></li>
+                  <li><a href="#">CSC Newsletters</a></li>
+                  <li><a href="#">CSC Songs</a></li>
+                  <li><a href="#">Media Kit</a></li>
+                  <li><a href="#">Press Releases</a></li>
+                  <li><a href="#">CSC Annual Report</a></li>                 
+                </ul>
+              </li> -->
+
+
+                    <li class=" text-uppercase"><a class="nav-link scrollto" href="#team">Contact Us</a></li>
+
+
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header>
+
+    <!-- Content for specific pages will be included here -->
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+
+        <div class="footer-top footer-newsletter">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 footer-contact">
+                        <h6>Common Service Centers Scheme(CSC)</h6>
+                        <p>
+                            Common Service Centers Scheme are a strategic cornerstone of the digital India Programme.
+                            They are the
+                            access points for delivery of various electronic services to villages in India....
+                        </p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+
+
+                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                            <a href="#" class="linkedin"><i class="bx bxl-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">VLE Registration</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">DigiPay</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">PMGDISHA</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Important Link</h4>
+                        <ul>
+                            <li> <a class="text-center" href="#"> <img src="assets/img/Group 30.png" width="50%"
+                                        alt=""></a></li>
+                            <li> <a class="text-center" href="#"> <img src="assets/img/Image 26.png" width="50%"
+                                        alt=""></a></li>
+                            <li> <a class="text-center" href="#"><img src="assets/img/Image 27.png" width="50%" alt="">
+                                </a></li>
+
+
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Contact Us</h4>
+                        <p> <span><i class='bx bx-phone-call'></i></span> &nbsp; 1800-121-3468</p>
+                        <p> <span><i class='bx bx-envelope'></i></span> &nbsp; helpdesk@csc.gov.in</p>
+                        <p> <span><i class='bx bx-location-plus'></i></span> &nbsp; Common Service Centers <br>Ministry
+                            of
+                            Electronics & Information Technology, NewDelhi-110003</p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </footer><!-- End Footer -->
+    <footer id="" class="bg-dark ">
+        <div class="container d-flex justify-content-between">
+            <div class="copyright py-2">
+                Copyright ©2022 csc.gov.in. All Rights Reserved
+            </div>
+
+            <div class="credits py-2">
+                <a href="#">Feedback</a>
+                <a href="#">FAQ</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Sitemap / Help</a>
+
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Vendor JS Files -->
+    <script src="{{ url_for('static', filename='vendor/purecounter/purecounter_vanilla.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/waypoints/noframework.waypoints.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/php-email-form/validate.js') }}"></script>
+    
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script1.js') }}"></script>
+</body>
+</html>
