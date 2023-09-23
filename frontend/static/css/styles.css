@@ -1,0 +1,175 @@
+.login-left {
+    padding: 50px;
+}
+@media (min-width: 768px) {
+    .height-md-100vh {
+        min-height: 100vh;
+    }
+    .height-md-100 {
+        min-height: 100vh;
+        /*overflow: auto;*/
+    }
+    .login-left {
+        padding: 25px 90px;
+    }
+}
+.inputwithimg {
+    position: relative;
+}
+.inputwithimg i {
+    position: absolute;
+    top: 11px;
+    left: 10px;
+    color: #11486b;
+    font-size: 15px;
+}
+
+.form-check-label {
+    line-height: 22px;
+}
+.login-right {
+    position: relative;
+    background: #11486b ;
+    color: #fff;
+    padding: 40px;
+}
+#signbtn {
+    background: #11486b;
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+    border: 1px solid #11486b;
+}
+.login-right-div {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 500px;
+}
+.custom-control-label {
+    line-height: 24px;
+    padding: 0px 10px;
+}
+
+
+@media (min-width: 768px) {
+    .payment-section {
+        min-height: 100vh;
+    }    
+}
+.payment-section {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    background-color: var(--background);
+    padding: 50px 0px;
+    min-height: 100vh;
+}
+@media (max-width: 768px) {
+    .payment-section {
+        padding-top: 0px !important;
+        padding-bottom: 70px;
+        align-content: baseline;
+    }
+}
+
+
+
+
+/* regestration  */
+
+.registration .registration-left {
+    padding: 50px;
+}
+
+@media (min-width: 768px) {
+    .registration .height-md-100vh {
+        min-height: 100vh;
+    }
+    
+    .registration .height-md-100 {
+        min-height: 100vh;
+    }
+
+    .registration .registration-left {
+        padding: 25px 90px;
+    }
+}
+
+.registration .inputwithimg {
+    position: relative;
+}
+
+.registration .inputwithimg i {
+    position: absolute;
+    top: 11px;
+    left: 10px;
+    color: #11486b;
+    font-size: 15px;
+}
+
+.registration .form-check-label {
+    line-height: 22px;
+}
+
+.registration .registration-right {
+    position: relative;
+    background: #11486b;
+    color: #fff;
+    padding: 40px;
+}
+
+.registration #registerBtn {
+    background: #11486b;
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+    border: 1px solid #11486b;
+}
+
+.registration .registration-right-div {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 500px;
+}
+
+.registration .custom-control-label {
+    line-height: 24px;
+    padding: 0px 10px;
+}
+
+@media (min-width: 768px) {
+    .registration .payment-section {
+        min-height: 100vh;
+    }
+}
+
+.registration .payment-section {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    background-color: var(--background);
+    padding: 50px 0px;
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .registration .payment-section {
+        padding-top: 0px !important;
+        padding-bottom: 70px;
+        align-content: baseline;
+    }
+}
