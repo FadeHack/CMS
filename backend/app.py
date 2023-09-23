@@ -3,15 +3,25 @@ from flask_pymongo import PyMongo
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import User, Case, Lawyer
 from flask_login import login_user
+from flask import jsonify
+from pymongo import MongoClient
+
+
 
 
 app = Flask(__name__, template_folder='../frontend/templates',
             static_folder='../frontend/static', static_url_path='/static')
-# Replace with a strong secret key
-app.config['SECRET_KEY'] = 'fUZbWUl9fntK'
-# Replace with your MongoDB URI
-app.config['MONGO_URI'] = 'mongodb+srv://Cluster55742:fUZbWUl9fntK@cluster55742.rnk3nbk.mongodb.net/?appName=mongosh+2.0.1&authMechanism=DEFAULT&tls=true'
 
+# MongoDB connection settings
+mongo_username = "Cluster55742"
+mongo_password = "fUZbWUl9fntK"
+mongo_cluster = "cluster55742.rnk3nbk.mongodb.net"
+mongo_dbname = "Case-Management-Portal"
+
+# Create MongoDB client
+client = MongoClient(f"mongodb+srv://{mongo_username}:{mongo_password}@{mongo_cluster}/{mongo_dbname}?retryWrites=true&w=majority")
+print(client)
+db = client[mongo_dbname]
 mongo = PyMongo(app)
 
 # Sample user model for demonstration purposes
@@ -66,12 +76,23 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
+        user_type = request.form['user_type']
 
         # Replace this with MongoDB user retrieval logic
-        user = next((u for u in user if u.username == username), None)
+        if user_type == 'user':
+            user = next((u for u in user if u.username == username), None)
+        elif user_type == 'lawyer':
+            lawyer = next((l for l in lawyer if l.username == username), None)
+        else:
+            flash('Invalid user type.', 'error')
+            return render_template('login.html')
 
-        if user and check_password_hash(user.password, password):
-            session['user'] = username
+        if user or lawyer and check_password_hash(user.password, password):
+            if user_type == 'user':
+                session['user'] = username
+            elif user_type == 'lawyer':
+                session['lawyer'] = username
+
             flash('Login successful!', 'success')
             return redirect(url_for('dashboard'))
         else:
@@ -132,9 +153,9 @@ def insert_case():
 @app.route('/dashboard')
 def dashboard():
     if 'user' in session:
-        return render_template('dashboard.html', username=session['user'], cases=cases)
+        return render_template('dashboard.html', username=session['user'], cases=Case)
     elif 'lawyer' in session:
-        return render_template('dashboard.html', username=session['lawyer'], cases=cases)
+        return render_template('dashboard.html', username=session['lawyer'], cases=Case)
     else:
         flash('You need to log in first', 'error')
         return redirect(url_for('login'))
