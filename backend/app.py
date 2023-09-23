@@ -5,24 +5,46 @@ from models import User, Case, Lawyer
 from flask_login import login_user
 from flask import jsonify
 from pymongo import MongoClient
-
-
+from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
 
 
 app = Flask(__name__, template_folder='../frontend/templates',
             static_folder='../frontend/static', static_url_path='/static')
 
-# MongoDB connection settings
+# # MongoDB connection settings
 mongo_username = "Cluster55742"
 mongo_password = "fUZbWUl9fntK"
-mongo_cluster = "cluster55742.rnk3nbk.mongodb.net"
+mongo_cluster = "Cluster55742"
 mongo_dbname = "Case-Management-Portal"
 
-# Create MongoDB client
-client = MongoClient(f"mongodb+srv://{mongo_username}:{mongo_password}@{mongo_cluster}/{mongo_dbname}?retryWrites=true&w=majority")
-print(client)
-db = client[mongo_dbname]
-mongo = PyMongo(app)
+# # Create MongoDB client
+# client = MongoClient(f"mongodb+srv://{mongo_username}:{mongo_password}@{mongo_cluster}/{mongo_dbname}?retryWrites=true&w=majority")
+# print(client)
+# db = client[mongo_dbname]
+# mongo = PyMongo(app)
+
+# Sample user model for demonstration purposes
+
+##############################################################
+uri = 'mongodb+srv://Cluster55742:fUZbWUl9fntK@cluster55742.rnk3nbk.mongodb.net/?appName=mongosh+2.0.1&authMechanism=DEFAULT&tls=true'
+
+# Create a new client and connect to the server
+client = MongoClient(uri, server_api=ServerApi('1'))
+
+# Send a ping to confirm a successful connection
+try:
+    client.admin.command('ping')
+    print("Pinged your deployment. You successfully connected to MongoDB!")
+except Exception as e:
+    print(e)
+
+
+mongo_dbname = client['Case-Management-Portal']
+users_collection = mongo_dbname['Users']
+assessments_collection = mongo_dbname['Lawyer']
+results_collection = mongo_dbname['Admin']
+##############################################################
 
 # Sample user model for demonstration purposes
 
@@ -100,6 +122,7 @@ def login():
 
     return render_template('login.html')
 
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     """Registers a new user."""
@@ -127,7 +150,6 @@ def register():
             login_user(lawyer)
         else:
             return render_template('register.html', error='Invalid user type.')
-
 
         return redirect(url_for('index'))
 
