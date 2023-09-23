@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Registration Section -->
+    <div class="registration">
+        <section class="registration-section">
+            <div class="container">
+                <div class="row height-md-100vh">
+                    <div class="col-md-6 registration-left height-md-100 d-flex flex-column justify-content-center">
+                        <h2>Create an Account</h2>
+                        <p>Use your Email ID</p>
+                        <form class="mt-5" method="post">
+                            <div class="form-group mb-4">
+                                <label for="email">Email</label>
+                                <div class="inputwithimg">
+                                    <input type="email" placeholder="Email" name="email" class="form-control" id="email" />
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="username">Username</label>
+                                <div class="inputwithimg">
+                                    <input type="text" placeholder="Username" name="username" class="form-control" id="username" />
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="password">Password</label>
+                                <div class="inputwithimg">
+                                    <input type="password" placeholder="Password" name="password" class="form-control" id="password" />
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <div class="inputwithimg">
+                                    <input type="password" placeholder="Confirm Password" name="confirmPassword" class="form-control" id="confirmPassword" />
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="role">Select Role</label>
+                                <div class="inputwithimg">
+                                    <select type="role" placeholder="Role" name="role" class="form-control" id="role">
+                                        <option value="User">User</option>
+                                        <option value="Lawyer">Lawyer</option>
+                                    </select>
+                                </div>
+                            </div>
+<!-- Dynamic Fields -->
+<div id="dynamicFields">
+    <!-- Fields for User Role -->
+    <div id="userFields" class="roleFields">
+        <div class="form-group mb-4">
+            <label for="phoneNumber">Phone Number</label>
+            <div class="inputwithimg">
+                <input type="tel" placeholder="Phone Number" name="user-phoneNumber" class="form-control" id="user-phoneNumber" />
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <label for="address">Address</label>
+            <div class="inputwithimg">
+                <input type="text" placeholder="Address" name="user-address" class="form-control" id="user-address" />
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <label for="occupation">Occupation</label>
+            <div class="inputwithimg">
+                <input type="text" placeholder="Occupation" name="user-occupation" class="form-control" id="user-occupation" />
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <label for="gender">Gender</label>
+            <div class="inputwithimg">
+                <input type="radio" name="user-gender" value="Male" id="user-gender-male">
+                <label for="gender-male">Male</label>
+                <input type="radio" name="user-gender" value="Female" id="user-gender-female">
+                <label for="gender-female">Female</label>
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <label for="dob">Date of Birth</label>
+            <div class="inputwithimg">
+                <input type="date" placeholder="Date of Birth" name="user-dob" class="form-control" id="user-dob" />
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <label for="state">State</label>
+            <div class="inputwithimg">
+                <input type="text" placeholder="State" name="user-state" class="form-control" id="user-state" />
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <label for="country">Country</label>
+            <div class="inputwithimg">
+                <input type="text" placeholder="Country" name="user-country" class="form-control" id="user-country" />
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <label for="pincode">Pincode</label>
+            <div class="inputwithimg">
+                <input type="text" placeholder="Pincode" name="user-pincode" class="form-control" id="user-pincode" />
+            </div>
+        </div>
+        <!-- Add other user-specific fields here -->
+    </div>
+    <!-- Fields for Lawyer Role -->
+    <div id="lawyerFields" class="roleFields">
+
+        <div class="form-group mb-4">
+            <label for="phoneNumber">Phone Number</label>
+            <div class="inputwithimg">
+                <input type="tel" placeholder="Phone Number" name="lawyer-phoneNumber" class="form-control" id="lawyer-phoneNumber" />
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <label for="address">Address</label>
+            <div class="inputwithimg">
+                <input type="text" placeholder="Address" name="lawyer-address" class="form-control" id="lawyer-address" />
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <label for="gender">Gender</label>
+            <div class="inputwithimg">
+                <input type="radio" name="lawyer-gender" value="Male" id="lawyer-gender-male">
+                <label for="gender-male">Male</label>
+                <input type="radio" name="lawyer-gender" value="Female" id="lawyer-gender-female">
+                <label for="gender-female">Female</label>
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <label for="dob">Date of Birth</label>
+            <div class="inputwithimg">
+                <input type="date" placeholder="Date of Birth" name="lawyer-dob" class="form-control" id="lawyer-dob" />
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <label for="state">State</label>
+            <div class="inputwithimg">
+                <input type="text" placeholder="State" name="lawyer-state" class="form-control" id="lawyer-state" />
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <label for="country">Country</label>
+            <div class="inputwithimg">
+                <input type="text" placeholder="Country" name="lawyer-country" class="form-control" id="lawyer-country" />
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <label for="pincode">Pincode</label>
+            <div class="inputwithimg">
+                <input type="text" placeholder="Pincode" name="lawyer-pincode" class="form-control" id="lawyer-pincode" />
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <label for="yearsOfExperience">Years of Experience</label>
+            <div class="inputwithimg">
+                <input type="number" placeholder="Years of Experience" name="yearsOfExperience" class="form-control" id="yearsOfExperience" />
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <label for="fieldOfExpertise">Field of Expertise</label>
+            <div class="inputwithimg">
+                <input type="text" placeholder="Field of Expertise" name="fieldOfExpertise" class="form-control" id="fieldOfExpertise" />
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <label for="casesWon">Number of Cases Won</label>
+            <div class="inputwithimg">
+                <input type="number" placeholder="Number of Cases Won" name="casesWon" class="form-control" id="casesWon" />
+            </div>
+        </div>
+        <!-- Add other lawyer-specific fields here -->
+    </div>
+
+</div>
+<!-- End Dynamic Fields -->
+
+                            <button type="submit" class="btn px-5 py-2 mt-3" id="registerBtn">REGISTER</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6 registration-right flex-column justify-content-center align-items-center height-md-100 d-none d-md-flex">
+                        <h4>Let's get started.</h4>
+                        <p>Welcome</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript to Show/Hide Dynamic Fields -->
+    <script>
+        // Function to show/hide dynamic fields based on selected role
+        function toggleDynamicFields() {
+            const role = document.getElementById('role').value;
+            const userFields = document.getElementById('userFields');
+            const lawyerFields = document.getElementById('lawyerFields');
+
+            // Hide all role-specific fields first
+            userFields.style.display = 'none';
+            lawyerFields.style.display = 'none';
+
+            // Show fields based on selected role
+            if (role === 'User') {
+                userFields.style.display = 'block';
+            } else if (role === 'Lawyer') {
+                lawyerFields.style.display = 'block';
+            }
+        }
+
+        // Add event listener to role select element
+        document.getElementById('role').addEventListener('change', toggleDynamicFields);
+
+        // Initialize dynamic fields on page load
+        toggleDynamicFields();
+    </script>
+</div>
+{% endblock %}
