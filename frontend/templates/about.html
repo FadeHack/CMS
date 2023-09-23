@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Landing Section -->
+    <div class="about">
+        <main id="main" data-aos="fade-up">
+            <!-- ======= Banner ======= -->
+            <!-- <div class="banner">
+          <img src="assets/img/Untitled.png" alt="" width="100%">
+        </div> -->
+            <!-- ============= slider ========== -->
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner banner">
+                    <div class="carousel-item active">
+                        <img src="{{ url_for('static', filename='images/SCI.jpg') }}" class="d-block h-20 w-100" alt="..." height="450">
+
+                    </div>
+    
+    
+    
+                </div>
+            </div>
+    
+            <section class="side_nav container">
+                <div class="d-flex align-items-start">
+                    <div class="nav col-md-3 inner-page col-12 left_nav flex-column nav-pills me-3" id="v-pills-tab"
+                        role="tablist" aria-orientation="vertical">
+                        <h5 class="cutm_head mb-4 mt-1">
+                            <span class="text-primary-cstm">About</span>
+                        </h5>
+                        <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                            aria-selected="true"> About Meity</button>
+                        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
+                            aria-selected="false"> About Digital India
+                        </button>
+                        <button class="nav-link" id="v-pills-disabled-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-disabled" type="button" role="tab" aria-controls="v-pills-disabled"
+                            aria-selected="false"> Common Service Centres 2.0
+                            Scheme
+                        </button>
+    
+                    </div>
+                    <div class="tab-content col-md-9 col-12 right-nav" id="v-pills-tabContent">
+                        <nav class="float-end"
+                            style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+                            aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                            </ol>
+                        </nav>
+                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                            aria-labelledby="v-pills-home-tab" tabindex="0">
+                            <div class="row ">
+                                <div class="col-md-8 inner-page plc-0">
+                                    <h5 class="cutm_head">
+                                        <span class="text-primary-cstm">Ministry of Electronics & Information
+                                            Technology</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <p class="justify">
+                                The Ministry of Electronics and Information Technology is a full-fledged ministry under the
+                                Union Government. It was formed after bifurcation of Department of Electronics & Information
+                                Technology from the Ministry of Communications & Information Technology in 2016.
+                            </p>
+                            <!-- <h5 class="cutm_head">
+                                <span class="text-primary-cstm">Vision</span>
+                            </h5> -->
+                            <p class="justify">
+                                e-Development of India as the engine for transition into a developed nation and an empowered
+                                society. <br>
+                                For more information please click here <a href="http://meity.gov.in/"
+                                    target="_blank"><strong>Ministry of Electronics &amp; Information
+                                        Technology</strong></a>
+                            </p>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                            aria-labelledby="v-pills-profile-tab" tabindex="0">
+                            <div class="row">
+                                <div class="col-md-8 plc-0 inner-page">
+                                    <h5 class="cutm_head">
+                                        <span class="text-primary-cstm">Digital India</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <p class="justify">
+                                Digital India is a flagship programme of the Government of India with a vision to transform
+                                India into a digitally empowered society and knowledge economy. The programme was launched
+                                on July 1, 2015 by Hon’ Prime Minister Shri Narendra Modi.
+                            </p>
+                            <p class="justify">For more information please click here <a href="http://digitalindia.gov.in/"
+                                    target="_blank"><strong>Digital India</strong></a>
+                            </p>
+                            <img src="assets/img/digitalindia.jpg" alt="">
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel"
+                            aria-labelledby="v-pills-disabled-tab" tabindex="0">
+                            <div class="row">
+                                <div class="col-md-8 plc-0 inner-page">
+                                    <h5 class="cutm_head">
+                                        <span class="text-primary-cstm">Common Service Centres 2.0 Scheme</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <p class="justify">
+                                Based on the assessment of Common Service Centres scheme, the Government launched the Common
+                                Service Centres 2.0 scheme in 2015 to expand the outreach of Common Service Centres to all
+                                Gram Panchayats across the country. <br>
+                                Under Common Service Centres 2.0 scheme, at least one Common Service Centres will be set up
+                                in each of the 2.5 lakh GPs across the country by 2019. Common Service Centres functioning
+                                under the existing scheme will also be strengthened and integrated with additional 1.5 lakh
+                                Common Service Centres across the country.<br>
+                                Common Service Centres 2.0 scheme would consolidate service delivery through a universal
+                                technology platform, thereby making e-services, particularly G2C services accessible to
+                                citizens anywhere in the country. <br>
+                            </p>
+                                <div class="features">
+                                    <p class="fw-bolder mb-0"> Key Features of Common Service Centres 2.0 scheme</p>
+                                  
+                                    <ol type="1" >
+                                       <li> A self-sustaining network of 2.5 lakh Common Service Centres in Gram Panchayats </li>
+                                        <li>  Large bouquet of e-services through a single delivery platform</li>
+                                        <li>  Standardization of services and capacity building of stakeholders </li>
+                                        <li> Localised Help Desk support </li>
+                                        <li>  Sustainability of VLEs through maximum commission sharing </li>
+                                        <li>  Encouraging more women as VLEs</li>
+                                        </ol type="1">
+                                </div>
+                              
+                           
+                           
+                        </div>
+    
+                    </div>
+                </div>
+    
+            </section>
+    
+    
+        </main>
+
+</div>
+
+
+{% endblock %}
