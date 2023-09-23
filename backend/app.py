@@ -75,6 +75,7 @@ def index():
     return render_template('index.html', features=features)
 
 
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -144,11 +145,13 @@ def insert_case():
 
 @app.route('/dashboard')
 def dashboard():
+    
     if 'user' in session:
         return render_template('dashboard.html', username=session['user'], cases=cases)
     else:
         flash('You need to log in first', 'error')
-        return redirect(url_for('login'))
+        # return redirect(url_for('login'))
+        return render_template('dashboard.html')
 
 
 @app.route('/logout')
