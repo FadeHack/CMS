@@ -43,111 +43,67 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="form-group mb-4">
+                                <label for="phoneNumber">Phone Number</label>
+                                <div class="inputwithimg">
+                                    <input type="tel" placeholder="Phone Number" name="phoneNumber" class="form-control" id="phoneNumber" />
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="address">Address</label>
+                                <div class="inputwithimg">
+                                    <input type="text" placeholder="Address" name="address" class="form-control" id="address" />
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="gender">Gender</label>
+                                <div class="inputwithimg">
+                                    <input type="radio" name="gender" value="Male" id="gender-male">
+                                    <label for="gender-male">Male</label>
+                                    <input type="radio" name="gender" value="Female" id="gender-female">
+                                    <label for="gender-female">Female</label>
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="dob">Date of Birth</label>
+                                <div class="inputwithimg">
+                                    <input type="date" placeholder="Date of Birth" name="dob" class="form-control" id="dob" />
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="state">State</label>
+                                <div class="inputwithimg">
+                                    <input type="text" placeholder="State" name="state" class="form-control" id="state" />
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="country">Country</label>
+                                <div class="inputwithimg">
+                                    <input type="text" placeholder="Country" name="country" class="form-control" id="country" />
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="pincode">Pincode</label>
+                                <div class="inputwithimg">
+                                    <input type="text" placeholder="Pincode" name="pincode" class="form-control" id="pincode" />
+                                </div>
+                            </div>
 <!-- Dynamic Fields -->
 <div id="dynamicFields">
     <!-- Fields for User Role -->
     <div id="userFields" class="roleFields">
         <div class="form-group mb-4">
-            <label for="phoneNumber">Phone Number</label>
-            <div class="inputwithimg">
-                <input type="tel" placeholder="Phone Number" name="user-phoneNumber" class="form-control" id="user-phoneNumber" />
-            </div>
-        </div>
-        <div class="form-group mb-4">
-            <label for="address">Address</label>
-            <div class="inputwithimg">
-                <input type="text" placeholder="Address" name="user-address" class="form-control" id="user-address" />
-            </div>
-        </div>
-        <div class="form-group mb-4">
             <label for="occupation">Occupation</label>
             <div class="inputwithimg">
-                <input type="text" placeholder="Occupation" name="user-occupation" class="form-control" id="user-occupation" />
+                <input type="text" placeholder="Occupation" name="occupation" class="form-control" id="occupation" />
             </div>
         </div>
-        <div class="form-group mb-4">
-            <label for="gender">Gender</label>
-            <div class="inputwithimg">
-                <input type="radio" name="user-gender" value="Male" id="user-gender-male">
-                <label for="gender-male">Male</label>
-                <input type="radio" name="user-gender" value="Female" id="user-gender-female">
-                <label for="gender-female">Female</label>
-            </div>
-        </div>
-        <div class="form-group mb-4">
-            <label for="dob">Date of Birth</label>
-            <div class="inputwithimg">
-                <input type="date" placeholder="Date of Birth" name="user-dob" class="form-control" id="user-dob" />
-            </div>
-        </div>
-        <div class="form-group mb-4">
-            <label for="state">State</label>
-            <div class="inputwithimg">
-                <input type="text" placeholder="State" name="user-state" class="form-control" id="user-state" />
-            </div>
-        </div>
-        <div class="form-group mb-4">
-            <label for="country">Country</label>
-            <div class="inputwithimg">
-                <input type="text" placeholder="Country" name="user-country" class="form-control" id="user-country" />
-            </div>
-        </div>
-        <div class="form-group mb-4">
-            <label for="pincode">Pincode</label>
-            <div class="inputwithimg">
-                <input type="text" placeholder="Pincode" name="user-pincode" class="form-control" id="user-pincode" />
-            </div>
-        </div>
+ 
         <!-- Add other user-specific fields here -->
     </div>
     <!-- Fields for Lawyer Role -->
     <div id="lawyerFields" class="roleFields">
 
-        <div class="form-group mb-4">
-            <label for="phoneNumber">Phone Number</label>
-            <div class="inputwithimg">
-                <input type="tel" placeholder="Phone Number" name="lawyer-phoneNumber" class="form-control" id="lawyer-phoneNumber" />
-            </div>
-        </div>
-        <div class="form-group mb-4">
-            <label for="address">Address</label>
-            <div class="inputwithimg">
-                <input type="text" placeholder="Address" name="lawyer-address" class="form-control" id="lawyer-address" />
-            </div>
-        </div>
-        <div class="form-group mb-4">
-            <label for="gender">Gender</label>
-            <div class="inputwithimg">
-                <input type="radio" name="lawyer-gender" value="Male" id="lawyer-gender-male">
-                <label for="gender-male">Male</label>
-                <input type="radio" name="lawyer-gender" value="Female" id="lawyer-gender-female">
-                <label for="gender-female">Female</label>
-            </div>
-        </div>
-        <div class="form-group mb-4">
-            <label for="dob">Date of Birth</label>
-            <div class="inputwithimg">
-                <input type="date" placeholder="Date of Birth" name="lawyer-dob" class="form-control" id="lawyer-dob" />
-            </div>
-        </div>
-        <div class="form-group mb-4">
-            <label for="state">State</label>
-            <div class="inputwithimg">
-                <input type="text" placeholder="State" name="lawyer-state" class="form-control" id="lawyer-state" />
-            </div>
-        </div>
-        <div class="form-group mb-4">
-            <label for="country">Country</label>
-            <div class="inputwithimg">
-                <input type="text" placeholder="Country" name="lawyer-country" class="form-control" id="lawyer-country" />
-            </div>
-        </div>
-        <div class="form-group mb-4">
-            <label for="pincode">Pincode</label>
-            <div class="inputwithimg">
-                <input type="text" placeholder="Pincode" name="lawyer-pincode" class="form-control" id="lawyer-pincode" />
-            </div>
-        </div>
         <div class="form-group mb-4">
             <label for="yearsOfExperience">Years of Experience</label>
             <div class="inputwithimg">
