@@ -1,0 +1,135 @@
+{% extends "baseDash.html" %}
+
+{% block content %}
+
+<div class="caseReg">
+    <h1>Case Registration</h1>
+    <form action="/caseReg" method="POST" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Date of Registration -->
+                <div class="form-group">
+                    <label for="dateOfRegistration">Date of Registration</label>
+                    <input type="date" class="form-control" id="dateOfRegistration" name="dateOfRegistration">
+                </div>
+
+                <!-- Client Name -->
+                <div class="form-group">
+                    <label for="clientName">Client Name</label>
+                    <input type="text" class="form-control" id="clientName" name="clientName">
+                </div>
+
+                <!-- Client Address -->
+                <div class="form-group">
+                    <label for="clientAddress">Client Address</label>
+                    <input type="text" class="form-control" id="clientAddress" name="clientAddress">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <!-- Case Description -->
+                <div class="form-group">
+                    <label for="caseDescription">Case Description</label>
+                    <textarea class="form-control" id="caseDescription" name="caseDescription" rows="4"></textarea>
+                </div>
+
+                <!-- Case Type -->
+                <div class="form-group">
+                    <label for="caseType">Case Type</label>
+                    <select class="form-control" id="caseType" name="caseType">
+                        <option value="Criminal Cases">Criminal Cases</option>
+                        <option value="Civil Cases">Civil Cases</option>
+                        <option value="Family Cases">Family Cases</option>
+                        <option value="Personal Injury Cases">Personal Injury Cases</option>
+                        <option value="Employment Cases">Employment Cases</option>
+                        <option value="Real Estate Cases">Real Estate Cases</option>
+                        <option value="Immigration Cases">Immigration Cases</option>
+                        <option value="Probate Cases">Probate Cases</option>
+                        <option value="Environmental Cases">Environmental Cases</option>
+                        <option value="Intellectual Property Cases">Intellectual Property Cases</option>
+                    </select>
+                </div>
+
+                <!-- Status -->
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <input type="text" class="form-control" id="status" name="status">
+                </div>
+
+                <!-- Case Notes -->
+                <div class="form-group">
+                    <label for="caseNotes">Case Notes</label>
+                    <textarea class="form-control" id="caseNotes" name="caseNotes" rows="4"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- File Uploads -->
+        <div class="row">
+            <div class="col-md-4">
+                <!-- Uploads 1 - Legal Briefs -->
+                <div class="form-group">
+                    <label for="legalBriefs">Legal Briefs</label>
+                    <input type="file" class="form-control" id="legalBriefs" name="legalBriefs">
+                </div>
+
+                <!-- Uploads 2 - Affidavits -->
+                <div class="form-group">
+                    <label for="affidavits">Affidavits</label>
+                    <input type="file" class="form-control" id="affidavits" name="affidavits">
+                </div>
+
+                <!-- Uploads 3 - Contracts -->
+                <div class="form-group">
+                    <label for="contracts">Contracts</label>
+                    <input type="file" class="form-control" id="contracts" name="contracts">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <!-- Uploads 4 - Court Orders -->
+                <div class="form-group">
+                    <label for="courtOrders">Court Orders</label>
+                    <input type="file" class="form-control" id="courtOrders" name="courtOrders">
+                </div>
+
+                <!-- Uploads 5 - Medical Records -->
+                <div class="form-group">
+                    <label for="medicalRecords">Medical Records</label>
+                    <input type="file" class="form-control" id="medicalRecords" name="medicalRecords">
+                </div>
+
+                <!-- Uploads 6 - Police Reports -->
+                <div class="form-group">
+                    <label for="policeReports">Police Reports</label>
+                    <input type="file" class="form-control" id="policeReports" name="policeReports">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <!-- Uploads 7 - Witness Statements -->
+                <div class="form-group">
+                    <label for="witnessStatements">Witness Statements</label>
+                    <input type="file" class="form-control" id="witnessStatements" name="witnessStatements">
+                </div>
+
+                <!-- Uploads 8 - Photos or Videos -->
+                <div class="form-group">
+                    <label for="photosOrVideos">Photos or Videos</label>
+                    <input type="file" class="form-control" id="photosOrVideos" name="photosOrVideos">
+                </div>
+
+                <!-- Uploads 9 - Financial Records -->
+                <div class="form-group">
+                    <label for="financialRecords">Financial Records</label>
+                    <input type="file" class="form-control" id="financialRecords" name="financialRecords">
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock %}

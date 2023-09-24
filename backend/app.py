@@ -177,8 +177,8 @@ def register():
     return render_template('register.html')
 
 
-@app.route('/registerCase', methods=['GET', 'POST'])
-def registerCase():
+@app.route('/caseReg', methods=['GET', 'POST'])
+def caseReg():
     if request.method == 'POST':
         role = request.form['role']
         case_type = request.form['caseType']
@@ -201,7 +201,7 @@ def registerCase():
         flash('Registration successful', 'success')
         # return redirect(url_for('dashboard.html'))
         return inserted_id
-    # return render_template(case_registration)
+    return render_template("case_registration.html")
 
 @app.route('/cases')
 def get_cases():
@@ -233,6 +233,7 @@ def dashboard():
 def yourCases():
     if request.method == "GET":
         return render_template('yourCases.html')
+
 
 
 @app.route('/logout')
