@@ -6,14 +6,16 @@ class Registration(Document):
     email = EmailField(required=True)
     username = StringField(required=True)
     password = StringField(required=True)  
-    role = StringField(choices=['user', 'lawyer'], required=True)
+    role = StringField(choices=['User', 'Lawyer'], required=True)
     phone_number = StringField(required=True)
     address = StringField(required=True)
-    gender = StringField(choices=['male', 'female', 'other'], required=True)
+    gender = StringField(choices=['Male', 'Female'], required=True)
     dob = DateTimeField(required=True)
     state = StringField(required=True)
     country = StringField(required=True)
     pin_code = IntField(required=True)
+    
+    occupation = StringField()
     
     field_of_expertise = StringField()
     number_of_cases_won = IntField()

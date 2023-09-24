@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_pymongo import PyMongo
 from werkzeug.security import generate_password_hash, check_password_hash
-from models import User, Case, Lawyer , Registration
+from models import Case, Lawyer , Registration
 from flask_login import login_user
 from flask import jsonify
 from pymongo import MongoClient
@@ -44,7 +44,7 @@ except Exception as e:
 
 
 mongo_dbname = client['Case-Management-Portal']
-users_collection = mongo_dbname['User']
+users_collection = mongo_dbname['Registration']
 assessments_collection = mongo_dbname['Lawyer']
 results_collection = mongo_dbname['Admin']
 ##############################################################
@@ -130,40 +130,45 @@ def register():
         email = request.form['email']
         username = request.form['username']
         password = request.form['password']
-        phone_number = request.form['phone_number']
+        confirm_password = request.form['confirmPassword']
+        phone_number = request.form['phoneNumber']
         address = request.form['address']
         gender = request.form['gender']
         dob = datetime.strptime(request.form['dob'], '%Y-%m-%d')
         state = request.form['state']
         country = request.form['country']
-        pin_code = int(request.form['pin_code'])
+        pin_code = int(request.form['pincode'])
+
         
-        if role == 'lawyer':
-            field_of_expertise = request.form['field_of_expertise']
-            number_of_cases_won = int(request.form['number_of_cases_won'])
-            years_of_experience = int(request.form['years_of_experience'])
+        if role == 'Lawyer':
+            field_of_expertise = request.form['fieldOfExpertise']
+            number_of_cases_won = int(request.form['casesWon'])
+            years_of_experience = int(request.form['yearsOfExperience'])
+            occupation = None
         else:
+            occupation = request.form['occupation']
             field_of_expertise = None
             number_of_cases_won = None
             years_of_experience = None
 
-        registration = Registration(
-            email=email,
-            username=username,
-            password=password,
-            role=role,
-            phone_number=phone_number,
-            address=address,
-            gender=gender,
-            dob=dob,
-            state=state,
-            country=country,
-            pin_code=pin_code,
-            field_of_expertise=field_of_expertise,
-            number_of_cases_won=number_of_cases_won,
-            years_of_experience=years_of_experience
-        )
-        registration.save()
+        registration = {
+            'email':email,
+            'username':username,
+            'password':password,
+            'role':role,
+            'phone_number':phone_number,
+            'address':address,
+            'gender':gender,
+            'dob':dob,
+            'state':state,
+            'occupation' : occupation,
+            'country':country,
+            'pin_code':pin_code,
+            'field_of_expertise':field_of_expertise,
+            'number_of_cases_won':number_of_cases_won,
+            'years_of_experience':years_of_experience
+        }
+        users_collection.insert_one(registration)
 
         flash('Registration successful', 'success')
         return redirect(url_for('index'))
