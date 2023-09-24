@@ -1,12 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_pymongo import PyMongo
 from werkzeug.security import generate_password_hash, check_password_hash
-from models import User, Case, Lawyer
+from models import User, Case, Lawyer , Registration
 from flask_login import login_user
 from flask import jsonify
 from pymongo import MongoClient
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+from datetime import datetime
 
 
 app = Flask(__name__, template_folder='../frontend/templates',
@@ -124,51 +125,67 @@ def login():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    """Registers a new user."""
-
     if request.method == 'POST':
-        user_type = request.form['role']
-        username = request.form['username']
+        role = request.form['role']
         email = request.form['email']
+        username = request.form['username']
         password = request.form['password']
-        confirm_password = request.form['confirm_password']
-
-        if password != confirm_password:
-            # Password mismatch error
-            return render_template('register.html', error='Passwords do not match.')
-
-        if user_type == 'user':
-            user = User(username=username, email=email, password=password)
-            mongo_dbname.session.add(user)
-            mongo_dbname.session.commit()
-            login_user(user)
-        elif user_type == 'lawyer':
-            lawyer = Lawyer(username=username, email=email, password=password)
-            mongo_dbname.session.add(lawyer)
-            mongo_dbname.session.commit()
-            login_user(lawyer)
+        phone_number = request.form['phone_number']
+        address = request.form['address']
+        gender = request.form['gender']
+        dob = datetime.strptime(request.form['dob'], '%Y-%m-%d')
+        state = request.form['state']
+        country = request.form['country']
+        pin_code = int(request.form['pin_code'])
+        
+        if role == 'lawyer':
+            field_of_expertise = request.form['field_of_expertise']
+            number_of_cases_won = int(request.form['number_of_cases_won'])
+            years_of_experience = int(request.form['years_of_experience'])
         else:
-            return render_template('register.html', error='Invalid user type.')
+            field_of_expertise = None
+            number_of_cases_won = None
+            years_of_experience = None
 
+        registration = Registration(
+            email=email,
+            username=username,
+            password=password,
+            role=role,
+            phone_number=phone_number,
+            address=address,
+            gender=gender,
+            dob=dob,
+            state=state,
+            country=country,
+            pin_code=pin_code,
+            field_of_expertise=field_of_expertise,
+            number_of_cases_won=number_of_cases_won,
+            years_of_experience=years_of_experience
+        )
+        registration.save()
+
+        flash('Registration successful', 'success')
         return redirect(url_for('index'))
 
     return render_template('register.html')
 
 
-@app.route("/insert/case", methods=["POST"])
-def insert_case():
-    """Inserts a new case document into the database."""
 
-    case_data = request.json
-    case = Case(
-        case_number=case_data["case_number"],
-        case_type=case_data["case_type"],
-        client_name=case_data["client_name"],
-        lawyer_id=case_data["lawyer_id"],
-    )
-    db.session.add(case)
-    db.session.commit()
-    return jsonify({"message": "Case inserted successfully."})
+# @app.route("/insert/case", methods=["POST"])
+# def insert_case():
+#     """Inserts a new case document into the database."""
+
+#     case_data = request.json
+#     case = Case(
+#         case_number=case_data["case_number"],
+#         case_type=case_data["case_type"],
+#         client_name=case_data["client_name"],
+#         lawyer_id=case_data["lawyer_id"],
+#     )
+#     db.session.add(case)
+#     db.session.commit()
+#     return jsonify({"message": "Case inserted successfully."})
 
 
 # @app.route('/dashboard')

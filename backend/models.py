@@ -1,18 +1,23 @@
-from mongoengine import Document, StringField, ListField, ReferenceField
-from mongoengine.fields import ObjectIdField
+from mongoengine import Document, StringField, ListField, ReferenceField, BooleanField
+from mongoengine.fields import EmailField, IntField, ReferenceField, DateTimeField, ListField,ObjectIdField
 
 
-class User(Document):
-    name = StringField(required=True)
-    email = StringField(required=True, unique=True)
-    password = StringField(required=True)
-
-    def to_json(self):
-        return {
-            "id": str(self.id),
-            "name": self.name,
-            "email": self.email,
-        }
+class Registration(Document):
+    email = EmailField(required=True)
+    username = StringField(required=True)
+    password = StringField(required=True)  
+    role = StringField(choices=['user', 'lawyer'], required=True)
+    phone_number = StringField(required=True)
+    address = StringField(required=True)
+    gender = StringField(choices=['male', 'female', 'other'], required=True)
+    dob = DateTimeField(required=True)
+    state = StringField(required=True)
+    country = StringField(required=True)
+    pin_code = IntField(required=True)
+    
+    field_of_expertise = StringField()
+    number_of_cases_won = IntField()
+    years_of_experience = IntField()
 
 
 class Case(Document):
