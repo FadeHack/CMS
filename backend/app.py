@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_pymongo import PyMongo
 from werkzeug.security import generate_password_hash, check_password_hash
-from models import Case, Lawyer , Registration
-from flask_login import login_user
 from flask import jsonify
 from pymongo import MongoClient
 from pymongo.mongo_client import MongoClient
@@ -198,7 +196,8 @@ def registerCase():
         case_collection.insert_one(case_register)
 
         flash('Registration successful', 'success')
-        return redirect(url_for('dashboard'))
+        # return redirect(url_for('dashboard.html'))
+        return 
     # return render_template(case_registration)
 
 
