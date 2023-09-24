@@ -1,0 +1,48 @@
+.case-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.case-table th,
+.case-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.case-table th {
+    background-color: #11486b;
+    color: #ffffff;
+}
+
+.case-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.case-status.active {
+    color: green;
+}
+
+.case-status.pending {
+    color: orange;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    background-color: #11486b;
+    /* Blue background color */
+    padding: 20px;
+    /* Add padding for spacing */
+    color: white;
+    /* Text color */
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /* margin-right: 20px; */
+}
