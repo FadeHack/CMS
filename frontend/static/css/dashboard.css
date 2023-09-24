@@ -743,33 +743,33 @@ canvas {
     font-size: 13px;
     padding-bottom: 5px; }
 
-.order-table {
+.contact-table {
   position: relative; }
-  .order-table:after, .order-table:before {
+  .contact-table:after, .contact-table:before {
     content: "";
     position: absolute;
     top: 0px;
     height: 37px;
     width: 10px;
     background: #e8e9ef; }
-  .order-table:after {
+  .contact-table:after {
     right: -1px; }
-  .order-table:before {
+  .contact-table:before {
     left: -1px; }
-  .order-table tr th {
+  .contact-table tr th {
     background: #e8e9ef; }
-  .order-table tr td:last-child, .order-table tr th:last-child {
+  .contact-table tr td:last-child, .contact-table tr th:last-child {
     text-align: right; }
-  .order-table tr:last-child td {
+  .contact-table tr:last-child td {
     border: none; }
-  .order-table .badge {
+  .contact-table .badge {
     color: white;
     padding: 10px;
     text-transform: uppercase;
     font-weight: normal; }
-  .order-table .badge-complete {
+  .contact-table .badge-complete {
     background: #00c292; }
-  .order-table .badge-pending {
+  .contact-table .badge-pending {
     background: #fb9678; }
 
 .messenger-box {
@@ -2762,10 +2762,10 @@ footer.site-footer {
       position: static !important;
       padding-left: 50px; }
 
-  .orders {
+  .contacts {
     overflow: hidden; }
 
-  .order-table .avatar, .order-table .serial {
+  .contact-table .avatar, .contact-table .serial {
     display: none; } }
 @media (max-width: 575px) {
   #left-panel .navbar {

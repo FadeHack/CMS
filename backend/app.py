@@ -6,7 +6,7 @@ from pymongo import MongoClient
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from datetime import datetime
-
+import random 
 import json
 from bson import ObjectId
 
@@ -113,7 +113,7 @@ def login():
         if user:
             session['username'] = user['username']
             session['role'] = user['role']
-            return render_template('dashboard.html', username=session['username'], role=session['role'])
+            return redirect(url_for('dashboard'))
         else:
             error = 'Invalid username, password, or role. Please try again.'
             return render_template('login.html', error=error)
@@ -172,7 +172,7 @@ def register():
             return redirect(url_for('index'))
         else:
             flash('Password does not match', 'failure')
-            return redirect(url_for('index'))
+            return redirect(url_for('login'))
 
     return render_template('register.html')
 
@@ -212,8 +212,22 @@ def get_cases():
     return JSONEncoder().encode(cases)
 
 
-
-
+@app.route('/dashboard', methods=['GET', 'POST'])
+def dashboard():
+    if request.method == "GET":
+        contacts = []
+        for i in range(1, 6):
+            contact = {
+                'Id': f'#{random.randint(1000, 9999)}',
+                'Name': 'User ' + str(i),
+                'Expertise': 'Product ' + str(i),
+                'YOE': random.randint(1, 15),
+                'CWS': random.randint(1,20),
+                'avatar': f'None',
+            }
+            contacts.append(contact)
+        
+        return render_template('dashboard.html', username=session['username'], role=session['role'], contacts = contacts)
 
 
 
