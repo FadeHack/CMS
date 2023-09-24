@@ -45,8 +45,7 @@ except Exception as e:
 
 mongo_dbname = client['Case-Management-Portal']
 users_collection = mongo_dbname['Registration']
-assessments_collection = mongo_dbname['Lawyer']
-results_collection = mongo_dbname['Admin']
+case_collection = mongo_dbname['Case']
 ##############################################################
 
 # Sample user model for demonstration purposes
@@ -113,9 +112,9 @@ def login():
         print("user is ", user)
 
         if user:
-            session['email'] = user['email']
+            session['username'] = user['username']
             session['role'] = user['role']
-            return render_template('dashboard.html', username=session['email'], role=session['role'])
+            return render_template('dashboard.html', username=session['username'], role=session['role'])
         else:
             error = 'Invalid username, password, or role. Please try again.'
             return render_template('login.html', error=error)
@@ -168,12 +167,40 @@ def register():
             'number_of_cases_won':number_of_cases_won,
             'years_of_experience':years_of_experience
         }
-        users_collection.insert_one(registration)
-
-        flash('Registration successful', 'success')
-        return redirect(url_for('index'))
+        if password == confirm_password:
+            users_collection.insert_one(registration)
+            flash('Registration successful', 'success')
+            return redirect(url_for('index'))
+        else:
+            flash('Password does not match', 'failure')
+            return redirect(url_for('index'))
 
     return render_template('register.html')
+
+
+@app.route('/registerCase', methods=['GET', 'POST'])
+def registerCase():
+    if request.method == 'POST':
+        role = request.form['role']
+        case_type = request.form['caseType']
+        case_name = request.form['caseName']
+        case_description = request.form['caseDescription']
+        aadhar_number = int(request.form['aadharNumber'])
+
+        case_register = {
+            'role':role,
+            'case_type':case_type,
+            'case_description': case_description,
+            'case_name' : case_name,
+            'aadhar_number':aadhar_number
+        }
+
+        case_collection.insert_one(case_register)
+
+        flash('Registration successful', 'success')
+        return redirect(url_for('dashboard'))
+    # return render_template(case_registration)
+
 
 
 
