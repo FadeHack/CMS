@@ -222,7 +222,7 @@ def dashboard():
                 'Name': random.choice(['Shivam', 'Keshav', 'Yash', 'Arjun', 'Deep']),
                 'Expertise': random.choice(['Criminal', 'Civil']),
                 'YOE': random.randint(1, 15),
-                'CWS': random.randint(1,20),
+                'CWS': random.randint(1,10),
                 'avatar': f'None',
             }
             contacts.append(contact)
