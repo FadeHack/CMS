@@ -850,7 +850,7 @@ canvas {
 /* Global Styles */
 /* Main Styles */
 aside.left-panel {
-  background: #fff;
+  background: #11486b;
   height: 100vh;
   padding: 0;
   vertical-align: top;
@@ -872,7 +872,7 @@ aside.left-panel {
   margin-left: 83px; }
 
 .navbar {
-  background: #fff;
+  background: #11486b;
   border-radius: 0;
   border: none;
   display: inline-block;
@@ -884,7 +884,7 @@ aside.left-panel {
     padding: 0;
     padding-bottom: 50px; }
   .navbar .menu-title {
-    color: #41434d;
+    color: #ffffff;
     clear: both;
     display: block;
     font-family: 'Open Sans';
@@ -901,17 +901,17 @@ aside.left-panel {
       padding-left: 30px;
       padding-right: 30px; }
       .navbar .navbar-nav > li.active {
-        background: #fafafa; }
+        background: #11486b; }
     .navbar .navbar-nav li {
       width: 100%; }
       .navbar .navbar-nav li.active .menu-icon, .navbar .navbar-nav li:hover .toggle_nav_button:before,
       .navbar .navbar-nav li .toggle_nav_button.nav-open:before {
-        color: #03a9f3; }
+        color: #9ed9f4; }
       .navbar .navbar-nav li .dropdown-toggle:after {
         display: none; }
       .navbar .navbar-nav li > a {
         background: none !important;
-        color: #607d8b;
+        color: #ffffff;
         display: inline-block;
         font-size: 14px;
         line-height: 26px;
@@ -919,9 +919,9 @@ aside.left-panel {
         position: relative;
         width: 100%; }
         .navbar .navbar-nav li > a:hover, .navbar .navbar-nav li > a:hover .menu-icon {
-          color: #03a9f3; }
+          color: #9ed9f4; }
         .navbar .navbar-nav li > a .menu-icon {
-          color: #607d8b;
+          color: #ffffff;
           float: left;
           margin-top: 8px;
           width: 55px;
@@ -956,7 +956,7 @@ aside.left-panel {
           .navbar .navbar-nav li.menu-item-has-children a:hover:before {
             border-color: #03a9f3 #03a9f3 transparent transparent; }
         .navbar .navbar-nav li.menu-item-has-children .sub-menu {
-          background: #fff;
+          background: #11486b;
           border: none;
           -webkit-box-shadow: none;
                   box-shadow: none;
@@ -965,7 +965,7 @@ aside.left-panel {
           .navbar .navbar-nav li.menu-item-has-children .sub-menu li {
             position: relative; }
           .navbar .navbar-nav li.menu-item-has-children .sub-menu i {
-            color: #c8c9ce;
+            color: #ffffff;
             float: left;
             padding: 0;
             position: absolute;
@@ -995,10 +995,10 @@ aside.left-panel {
 .navbar .navbar-nav > .active > a,
 .navbar .navbar-nav > .active > a:focus,
 .navbar .navbar-nav > .active > a:hover {
-  color: #03a9f3; }
+  color: #bdc4c8; }
 
 .navbar-nav li span.count {
-  background: #a9d86e;
+  background: #11486b;
   border-radius: 50%;
   color: #fff;
   font-family: 'Open Sans';
@@ -1017,7 +1017,7 @@ aside.left-panel {
   display: block;
   font-size: 15px;
   line-height: 35px;
-  color: #607d8b;
+  color: #ffffff;
   border-bottom: 1px solid rgba(96, 125, 139, 0.15); }
 .open .sub-menu i {
   left: 15px !important; }
@@ -1126,14 +1126,14 @@ aside.left-panel {
     padding: 0 1.875em;
     width: 100%; }
     .right-panel .breadcrumbs .breadcrumbs-inner {
-      background-color: #fff; }
+      background-color: #11486b; }
     .right-panel .breadcrumbs .col-lg-8 .page-header {
       float: left; }
   .right-panel .page-header {
     min-height: 50px;
     margin: 0px;
     padding: 0px 15px;
-    background: #ffffff;
+    background: #11486b;
     border-bottom: 0px; }
     .right-panel .page-header h1 {
       font-size: 18px;
@@ -1141,15 +1141,15 @@ aside.left-panel {
     .right-panel .page-header .breadcrumb {
       margin: 0px;
       padding: 13.5px 0;
-      background: #fff;
+      background: #11486b;
       text-transform: capitalize; }
     .right-panel .page-header .breadcrumb > li + li:before {
       padding: 0 5px;
-      color: #ccc;
+      color: #ffffff;
       content: "/\00a0"; }
 
 .right-panel header.header {
-  background: #fff;
+  background: #11486b;
   border-bottom: 1px solid #e8e9ed;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -1169,7 +1169,7 @@ aside.left-panel {
   padding-top: 7px; }
 .right-panel .navbar-header {
   width: 100%;
-  background-color: #fff;
+  background-color: #11486b;
   padding: 0 1.25em 0 0; }
   .right-panel .navbar-header > a {
     display: inline-block; }
@@ -1186,12 +1186,12 @@ aside.left-panel {
   z-index: 999; }
 
 header.fixed-top {
-  background: #fff;
+  background: #11486b;
   padding: 20px; }
 
 .menutoggle {
   background-color: transparent;
-  color: #99abb4 !important;
+  color: #ffffff !important;
   cursor: pointer;
   font-size: 1em;
   height: 40px;
@@ -1203,7 +1203,7 @@ header.fixed-top {
 .search-trigger {
   background: transparent;
   border: none;
-  color: #99abb4;
+  color: #ffffff;
   cursor: pointer;
   font-size: 16px;
   line-height: 55px;
@@ -1226,12 +1226,12 @@ header .form-inline {
     margin: 0 auto;
     position: relative; }
     header .form-inline .search-form input[type="text"] {
-      background: #131c21;
+      background: rgb(136, 173, 246);
       border: none;
       border-radius: 0;
       -webkit-box-shadow: none;
               box-shadow: none;
-      color: #d3d3d3;
+      color: #686464;
       font-size: 16px;
       height: inherit;
       margin-right: 0 !important;
@@ -1244,7 +1244,7 @@ header .form-inline {
     header .form-inline .search-form button {
       background: transparent;
       border: none;
-      color: #fff;
+      color: #ffffff;
       font-size: 16px;
       position: absolute;
       right: 15px;
@@ -1273,7 +1273,7 @@ header .form-inline {
   .header-left .dropdown .dropdown-toggle {
     background: transparent;
     border: none;
-    color: #99abb4;
+    color: #ffffff;
     font-size: 16px;
     line-height: 55px;
     padding-top: 0;
@@ -1337,6 +1337,7 @@ header .form-inline {
 .header-menu {
   display: -webkit-box;
   display: -ms-flexbox;
+  background-color: #11486b;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -2727,7 +2728,7 @@ footer.site-footer {
   .right-panel .top-left, .right-panel .top-right {
     width: 100%;
     float: none;
-    background: white; }
+    background: #11486b; }
   .right-panel .menutoggle {
     float: right; }
   .right-panel .navbar-header {
