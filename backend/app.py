@@ -54,13 +54,13 @@ case_collection = mongo_dbname['Case']
 def index():
     features = [
         {
-            'title': 'Feature 1',
-            'description': 'Description of Feature 1.',
+            'title': 'Case Status',
+            'description': 'Check status of your case here',
             'image': 'hammer.jpg',
             'link': '#',
         },
         {
-            'title': 'Feature 2',
+            'title': 'Case Registration',
             'description': 'Description of Feature 2.',
             'image': 'hammer.jpg',
             'link': '#',
@@ -218,9 +218,9 @@ def dashboard():
         contacts = []
         for i in range(1, 6):
             contact = {
-                'Id': f'#{random.randint(1000, 9999)}',
-                'Name': 'User ' + str(i),
-                'Expertise': 'Product ' + str(i),
+                'Id': f'{random.randint(1000, 9999)}',
+                'Name': random.choice(['Shivam', 'Keshav', 'Yash', 'Arjun', 'Deep']),
+                'Expertise': random.choice(['Criminal', 'Civil']),
                 'YOE': random.randint(1, 15),
                 'CWS': random.randint(1,20),
                 'avatar': f'None',

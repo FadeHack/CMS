@@ -1,15 +1,34 @@
+.logo {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+.logo a {
+    color: #222222;
+  }
+
+
+
 /* Updated styles scoped to .cases */
+.cases h1, .cases h2 {
+    text-align: center; /* Center-align headings */
+    color: #333; /* Dark text color */
+}
+
 .cases h1 {
     font-size: 36px;
     margin-bottom: 20px;
-    color: #333; /* Dark text color */
 }
 
 .cases h2 {
     font-size: 24px;
     margin-top: 30px;
     margin-bottom: 10px;
-    color: #333; /* Dark text color */
 }
 
 .cases .case-table {
@@ -20,8 +39,7 @@
     margin-bottom: 30px;
 }
 
-.cases .case-table th,
-.cases .case-table td {
+.cases .case-table th, .cases .case-table td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #e1e1e1;
@@ -53,6 +71,8 @@
     background-color: #ff9800; /* Orange */
     color: #fff;
 }
+
+
 
 /* Profile section styles (if needed) */
 .cases .profile-section {

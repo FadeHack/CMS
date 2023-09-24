@@ -1032,6 +1032,11 @@ aside.left-panel {
   width: 83px; }
   .open aside.left-panel .navbar .navbar-header {
     padding: 0; }
+  .logo{
+    border-radius: 20%;
+    height: 2vh;
+    width : 2vw;
+  }
   .open aside.left-panel .navbar .navbar-brand {
     display: none; }
     .open aside.left-panel .navbar .navbar-brand.hidden {
@@ -1155,7 +1160,6 @@ aside.left-panel {
           box-shadow: none;
   clear: both;
   padding: 0 30px;
-  height: 55px;
   position: fixed;
   left: 280px;
   left: 0;

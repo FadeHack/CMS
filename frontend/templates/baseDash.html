@@ -45,7 +45,10 @@
                     </li>
                     <li class="menu-title">Features</li><!-- /.menu-title -->
                     <li class="menu-item-has-children">
-                        <a href="yourCases" class="dropdown-toggle"> <i class="menu-icon fa fa-cogs"></i>Case Registration</a>
+                        <a href="yourCases"> <i class="menu-icon fa fa-cogs"></i>Case Status</a>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="caseReg"> <i class="menu-icon fa fa-cogs"></i>Case Registration</a>
                     </li>
                 
                 </ul>
@@ -59,9 +62,7 @@
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
-                    <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
-                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                    <a href="/" class="logo"><img src="{{ url_for('static', filename='images/sj.jpeg') }}" alt="">
                 </div>
             </div>
             <div class="top-right">
@@ -142,7 +143,8 @@
 
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="{{ url_for('static', filename='images/user.png') }}" alt="User Avatar">
+                            
                         </a>
 
                         <div class="user-menu dropdown-menu">
@@ -180,11 +182,9 @@ id="cai-webchat">
             <div class="footer-inner bg-white">
                 <div class="row">
                     <div class="col-sm-6">
-                        Copyright &copy; 2018 Ela Admin
+                        Copyright &copy; 2023 All Rights Reserved
                     </div>
-                    <div class="col-sm-6 text-right">
-                        Designed by <a href="https://colorlib.com">Colorlib</a>
-                    </div>
+
                 </div>
             </div>
         </footer>
