@@ -28,5 +28,7 @@ class Case(Document):
     case_description = StringField(required=True)
     aadhar_number = IntField(required=True)
     role = StringField(choices=['User', 'Lawyer'], required=True)
+    status = BooleanField(default = False)
+    
     
 

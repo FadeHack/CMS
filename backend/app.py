@@ -7,33 +7,36 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from datetime import datetime
 
+import json
+from bson import ObjectId
+
+class JSONEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, ObjectId):
+            return str(o)
+        return json.JSONEncoder.default(self, o)
+
+
+
 
 app = Flask(__name__, template_folder='../frontend/templates',
             static_folder='../frontend/static', static_url_path='/static')
 
 app.secret_key = 'fniemcoampi883nc93mk02'
 
-# # MongoDB connection settings
+
 mongo_username = "Cluster55742"
 mongo_password = "fUZbWUl9fntK"
 mongo_cluster = "Cluster55742"
 mongo_dbname = "Case-Management-Portal"
 
-# # Create MongoDB client
-# client = MongoClient(f"mongodb+srv://{mongo_username}:{mongo_password}@{mongo_cluster}/{mongo_dbname}?retryWrites=true&w=majority")
-# print(client)
-# db = client[mongo_dbname]
-# mongo = PyMongo(app)
 
-# Sample user model for demonstration purposes
-
-##############################################################
 uri = 'mongodb+srv://Cluster55742:fUZbWUl9fntK@cluster55742.rnk3nbk.mongodb.net/?appName=mongosh+2.0.1&authMechanism=DEFAULT&tls=true'
 
-# Create a new client and connect to the server
+
 client = MongoClient(uri, server_api=ServerApi('1'))
 
-# Send a ping to confirm a successful connection
+
 try:
     client.admin.command('ping')
     print("Pinged your deployment. You successfully connected to MongoDB!")
@@ -44,9 +47,7 @@ except Exception as e:
 mongo_dbname = client['Case-Management-Portal']
 users_collection = mongo_dbname['Registration']
 case_collection = mongo_dbname['Case']
-##############################################################
 
-# Sample user model for demonstration purposes
 
 
 @app.route('/')
@@ -88,7 +89,7 @@ def index():
             'image': 'hammer.jpg',
             'link': '#',
         },
-        # Add more feature data as needed
+        
     ]
     return render_template('index.html', features=features)
 
@@ -100,12 +101,12 @@ def login():
         password = request.form.get('password')
         role = request.form.get('role')
 
-        # Perform basic form validation
+        
         if not email or not password or not role:
             error = 'Please fill out all required fields.'
             return render_template('login.html', error=error)
 
-        # Check user credentials from MongoDB
+        
         user = users_collection.find_one({'email': email, 'password': password, 'role': role})
         print("user is ", user)
 
@@ -193,36 +194,27 @@ def registerCase():
             'aadhar_number':aadhar_number
         }
 
-        case_collection.insert_one(case_register)
+        result = case_collection.insert_one(case_register)
+        inserted_id = result.inserted_id
+        print(inserted_id)
 
         flash('Registration successful', 'success')
         # return redirect(url_for('dashboard.html'))
-        return 
+        return inserted_id
     # return render_template(case_registration)
 
+@app.route('/cases')
+def get_cases():
+ 
+    cases = list(case_collection.find())
+    print(cases)
+        
+    return JSONEncoder().encode(cases)
 
 
 
-# @app.route("/insert/case", methods=["POST"])
-# def insert_case():
-#     """Inserts a new case document into the database."""
-
-#     case_data = request.json
-#     case = Case(
-#         case_number=case_data["case_number"],
-#         case_type=case_data["case_type"],
-#         client_name=case_data["client_name"],
-#         lawyer_id=case_data["lawyer_id"],
-#     )
-#     db.session.add(case)
-#     db.session.commit()
-#     return jsonify({"message": "Case inserted successfully."})
 
 
-# @app.route('/dashboard')
-# def dashboard():
-
-#     pass
 
 
 @app.route('/logout')
