@@ -229,6 +229,10 @@ def dashboard():
         
         return render_template('dashboard.html', username=session['username'], role=session['role'], contacts = contacts)
 
+@app.route('/yourCases', methods=['GET', 'POST'])
+def yourCases():
+    if request.method == "GET":
+        return render_template('yourCases.html')
 
 
 @app.route('/logout')
