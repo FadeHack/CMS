@@ -12,6 +12,8 @@ from pymongo.server_api import ServerApi
 app = Flask(__name__, template_folder='../frontend/templates',
             static_folder='../frontend/static', static_url_path='/static')
 
+app.secret_key = 'fniemcoampi883nc93mk02'
+
 # # MongoDB connection settings
 mongo_username = "Cluster55742"
 mongo_password = "fUZbWUl9fntK"
@@ -41,7 +43,7 @@ except Exception as e:
 
 
 mongo_dbname = client['Case-Management-Portal']
-users_collection = mongo_dbname['Users']
+users_collection = mongo_dbname['User']
 assessments_collection = mongo_dbname['Lawyer']
 results_collection = mongo_dbname['Admin']
 ##############################################################
@@ -107,6 +109,7 @@ def login():
 
         # Check user credentials from MongoDB
         user = users_collection.find_one({'email': email, 'password': password, 'role': role})
+        print("user is ", user)
 
         if user:
             session['email'] = user['email']
