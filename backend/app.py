@@ -93,35 +93,30 @@ def index():
     return render_template('index.html', features=features)
 
 
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        user_type = request.form['user_type']
+        email = request.form.get('email')
+        password = request.form.get('password')
+        role = request.form.get('role')
 
-        # Replace this with MongoDB user retrieval logic
-        if user_type == 'user':
-            user = next((u for u in user if u.username == username), None)
-        elif user_type == 'lawyer':
-            lawyer = next((l for l in lawyer if l.username == username), None)
+        # Perform basic form validation
+        if not email or not password or not role:
+            error = 'Please fill out all required fields.'
+            return render_template('login.html', error=error)
+
+        # Check user credentials from MongoDB
+        user = users_collection.find_one({'email': email, 'password': password, 'role': role})
+
+        if user:
+            session['email'] = user['email']
+            session['role'] = user['role']
+            return render_template('dashboard.html', username=session['email'], role=session['role'])
         else:
-            flash('Invalid user type.', 'error')
-            return render_template('login.html')
-
-        if user or lawyer and check_password_hash(user.password, password):
-            if user_type == 'user':
-                session['user'] = username
-            elif user_type == 'lawyer':
-                session['lawyer'] = username
-
-            flash('Login successful!', 'success')
-            return redirect(url_for('dashboard'))
-        else:
-            flash('Invalid username or password', 'error')
-
-    return render_template('login.html')
+            error = 'Invalid username, password, or role. Please try again.'
+            return render_template('login.html', error=error)
+    else:
+        return render_template('login.html')
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -129,7 +124,7 @@ def register():
     """Registers a new user."""
 
     if request.method == 'POST':
-        user_type = request.form['user_type']
+        user_type = request.form['role']
         username = request.form['username']
         email = request.form['email']
         password = request.form['password']
@@ -141,13 +136,13 @@ def register():
 
         if user_type == 'user':
             user = User(username=username, email=email, password=password)
-            db.session.add(user)
-            db.session.commit()
+            mongo_dbname.session.add(user)
+            mongo_dbname.session.commit()
             login_user(user)
         elif user_type == 'lawyer':
             lawyer = Lawyer(username=username, email=email, password=password)
-            db.session.add(lawyer)
-            db.session.commit()
+            mongo_dbname.session.add(lawyer)
+            mongo_dbname.session.commit()
             login_user(lawyer)
         else:
             return render_template('register.html', error='Invalid user type.')
@@ -173,17 +168,10 @@ def insert_case():
     return jsonify({"message": "Case inserted successfully."})
 
 
-@app.route('/dashboard')
-def dashboard():
-    
-    if 'user' in session:
-        return render_template('dashboard.html', username=session['user'], cases=Case)
-    elif 'lawyer' in session:
-        return render_template('dashboard.html', username=session['lawyer'], cases=Case)
-    else:
-        flash('You need to log in first', 'error')
-        # return redirect(url_for('login'))
-        return render_template('dashboard.html')
+# @app.route('/dashboard')
+# def dashboard():
+
+#     pass
 
 
 @app.route('/logout')
