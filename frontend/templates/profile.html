@@ -1,210 +1,123 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
-  <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <title>Profile</title>
-  <style>
-   
-    header {
-      background-color: #11486b;
-      color: #f8f8f8;
-      padding: 20px;
-    }
-    p {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-}
 
-    
+    <div class="container">
 
-    .profile-section {
-      display: flex;
-      align-items: center;
-    }
+        <h1 class="text-center mt-3">Lawyer Profile</h1>
 
-    .profile-picture {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      /* margin-right: 20px; */
-    }
-
-    .info-section {
-      background-color: #a2a7ac;
-      color: #f8f8f8;
-      padding: 20px;
-      /* margin-bottom: 20px; */
-    }
-
-    .attendance-section, .announcement-section {
-      display: flex;
-      /* justify-content: space-between; */
-      /* background-color: #f8f8f8; */
-      padding: 20px;
-      /* margin-bottom: 20px; */
-    }
-    
-
-    .todo-item input[type="checkbox"] {
-      margin-right: 10px;
-    }
-
-    .completed {
-      text-decoration: line-through;
-      color: gray;
-    }
-
-    .info-section {
-  background-color: #a2a7ac;
-  color: #f8f8f8;
-  padding: 20px;
-  position: relative; /* Make the info-section a positioning context */
-}
-
-.edit-icon {
-  position: absolute;
-  top: 20px; /* Adjust the top position as needed */
-  right: 20px; /* Adjust the right position as needed */
-  font-size: 24px; /* Adjust the font size as needed */
-  cursor: pointer;
-}
-
-
- 
-   
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <div class="profile-section">
-        <img src="#" alt="Profile Picture" class="profile-picture mr-2">
-       <div class="px-2">
-        <h2 class="mb-1">Honey Baranwal</h2>
-        <h5>Email: abcd@gmail.com</h5>
-      <h5>Phone: 9874873743</h5>
-      <h5>Gender: Female</h5>
-       </div>
-       
-      </div>
-    </header>
-  
-    <div class="info-section">
-      <i class="fa fa-pencil edit-icon"></i>
-      <form id="editForm" style="display: none;"></form>
-      <h2>Work Information</h2>
-      <div class="form-group">
-        <label for="position">Position:</label>
-        <input type="text" class="form-control" id="position" name="position">
-      </div>
-      <div class="form-group">
-        <label for="department">Department:</label>
-        <input type="text" class="form-control" id="department" name="department">
-      </div>
-      <div class="form-group">
-        <label for="Address">Address:</label>
-        <input type="text" class="form-control" id="Address" name="Address">
-      </div>
-      <div class="form-group">
-        <label for="Country">Country:</label>
-        <input type="text" class="form-control" id="Country" name="Country">
-      </div>
-      <div class="form-group">
-        <label for="State">State:</label>
-        <input type="text" class="form-control" id="State" name="State">
-      </div>
-      <div class="form-group">
-        <label for="Pincode">Pincode:</label>
-        <input type="text" class="form-control" id="Pincode" name="Pincode">
-      </div>
-      <div class="form-group">
-        <label for="Occupation">Occupation:</label>
-        <input type="text" class="form-control" id="Occupation" name="Occupation">
-      </div>
-      <div class="form-group">
-        <label for="dob">Date of birth:</label>
-        <input type="text" class="form-control" id="dob" name="dob">
-      </div>
-    
-      <button type="submit" class="btn btn-primary">Save</button>
-    <button type="button" class="btn btn-secondary cancel-edit">Cancel</button>
-  </form>
-    </div>
-
-    
-  
-   <div class="row mt-4">
-    <!-- To-Do Box 1 -->
-    <div class="col-4 todo-section">
-      <div class="card">
-        <div class="card-body">
-          <h2>To-Do List 1</h2>
-          <textarea class="form-control mb-2" id="todoInput1" rows="3"></textarea>
-          <div class="row">
-            <div class="col-12 text-right mb-2">
-              <button class="btn btn-outline-success" id="addTaskBtn1" onclick="addTask(1)">Add Task</button>
-            </div>
-            <div class="col-12 mb-2">
-              <span id="todoList1" class="bg-light">
-                <button class="btn btn-sm btn-outline-danger" onclick="deleteTask(1)">Remove</button>
-              </span>
-            </div>
+        <header>
+          <div class="profile-section">
+            <img src="#" alt="Profile Picture" class="profile-picture mr-2">
+           <div class="px-2">
+            <h2 class="mb-1">Honey Baranwal</h2>
+            <h5>Email: abcd@gmail.com</h5>
+          <h5>Phone: 9874873743</h5>
+          <h5>Gender: Female</h5>
+           </div>
           </div>
+
+        <!-- Lawyer Profile Card -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <h2 class="card-title">Lawyer Details</h2>
+                <p>Position: <span id="lawyerPosition">Lawyer</span></p>
+                <p>Department: <span id="lawyerDepartment">Legal</span></p>
+                <p>Address: <span id="lawyerAddress">123 Main St</span></p>
+                <p>Occupation: <span id="lawyerOccupation">Attorney</span></p>
+                <p>Date of birth: <span id="lawyerDOB">January 1, 1980</span></p>
+                <p>Country: <span id="lawyerCountry">USA</span></p>
+                <p>State: <span id="lawyerState">New York</span></p>
+                <p>Pincode: <span id="lawyerPincode">10001</span></p>
+                <button class="btn btn-primary" onclick="editProfile()">Edit Profile</button>
+            </div>
         </div>
-      </div>
+
+        <!-- Edit Profile Modal -->
+        <div class="modal fade" id="editLawyerModal" tabindex="-1" role="dialog" aria-labelledby="editLawyerModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editLawyerModalLabel">Edit Lawyer Profile</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="lawyerForm" action="/editprofile">
+                            <div class="form-group">
+                                <label for="editLawyerPosition">Position</label>
+                                <input type="text" class="form-control" id="editLawyerPosition">
+                            </div>
+                            <div class="form-group">
+                                <label for="editLawyerDepartment">Department</label>
+                                <input type="text" class="form-control" id="editLawyerDepartment">
+                            </div>
+                            <div class="form-group">
+                                <label for="editLawyerAddress">Address</label>
+                                <input type="text" class="form-control" id="editLawyerAddress">
+                            </div>
+                            <div class="form-group">
+                                <label for="editLawyerOccupation">Occupation</label>
+                                <input type="text" class="form-control" id="editLawyerOccupation">
+                            </div>
+                            <div class="form-group">
+                                <label for="editLawyerDOB">Date of birth</label>
+                                <input type="text" class="form-control" id="editLawyerDOB">
+                            </div>
+                            <div class="form-group">
+                                <label for="editLawyerCountry">Country</label>
+                                <input type="text" class="form-control" id="editLawyerCountry">
+                            </div>
+                            <div class="form-group">
+                                <label for="editLawyerState">State</label>
+                                <input type="text" class="form-control" id="editLawyerState">
+                            </div>
+                            <div class="form-group">
+                                <label for="editLawyerPincode">Pincode</label>
+                                <input type="text" class="form-control" id="editLawyerPincode">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- To-Do Box 2 -->
-    <div class="col-4 todo-section">
-      <div class="card">
-        <div class="card-body">
-          <h2>Chat Box</h2>
-          <textarea class="form-control mb-2" id="todoInput2" rows="3"></textarea>
-          <div class="row">
-            <div class="col-12 text-right mb-2">
-              <button class="btn btn-outline-success" id="addTaskBtn2" onclick="addTask(2)">Add Message</button>
-            </div>
-            <div class="col-12 mb-2">
-              <span id="todoList2" class="bg-light">
-                <button class="btn btn-sm btn-outline-danger" onclick="deleteTask(2)">Delete</button>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- To-Do Box 3 -->
-    <div class="col-4 todo-section">
-      <div class="card">
-        <div class="card-body">
-          <h2>Chat Bot</h2>
-          <textarea class="form-control mb-2" id="todoInput3" rows="3"></textarea>
-          <div class="row">
-            <div class="col-12 text-right mb-2">
-              <button class="btn btn-outline-success" id="addTaskBtn3" onclick="addTask(3)">Add Message</button>
-            </div>
-            <div class="col-12 mb-2">
-              <span id="todoList3" class="bg-light">
-                <button class="btn btn-sm btn-outline-danger" onclick="deleteTask(3)">Delete</button>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <script>
+        function editProfile() {
+            // Populate modal fields with current data
+            $('#editLawyerPosition').val($('#lawyerPosition').text());
+            $('#editLawyerDepartment').val($('#lawyerDepartment').text());
+            $('#editLawyerAddress').val($('#lawyerAddress').text());
+            $('#editLawyerOccupation').val($('#lawyerOccupation').text());
+            $('#editLawyerDOB').val($('#lawyerDOB').text());
+            $('#editLawyerCountry').val($('#lawyerCountry').text());
+            $('#editLawyerState').val($('#lawyerState').text());
+            $('#editLawyerPincode').val($('#lawyerPincode').text());
 
-  </div>
-  </div>
-  </div>
-  
-</body>
-</html>
+            // Show the modal
+            $('#editLawyerModal').modal('show');
+        }
+
+        // Handle form submission
+        $('#lawyerForm').submit(function (e) {
+            e.preventDefault();
+            // Update profile with edited data
+            $('#lawyerPosition').text($('#editLawyerPosition').val());
+            $('#lawyerDepartment').text($('#editLawyerDepartment').val());
+            $('#lawyerAddress').text($('#editLawyerAddress').val());
+            $('#lawyerOccupation').text($('#editLawyerOccupation').val());
+            $('#lawyerDOB').text($('#editLawyerDOB').val());
+            $('#lawyerCountry').text($('#editLawyerCountry').val());
+            $('#lawyerState').text($('#editLawyerState').val());
+            $('#lawyerPincode').text($('#editLawyerPincode').val());
+
+            // Close the modal
+            $('#editLawyerModal').modal('hide');
+        });
+    </script>
+
