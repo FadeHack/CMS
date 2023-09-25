@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Window</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #6dcdde;
+        }
+        .chat-Window {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .chat-header {
+            background-color: #3061e5;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .chat-messages {
+            padding: 10px;
+            min-height: 300px;
+            max-height: 400px;
+            overflow-y: scroll;
+        }
+        .message-input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-Window">
+        <div class="chat-header">
+            <h1>Chat window</h1>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <input type="text" class="message-input" id="messageInput" placeholder="Type a message...">
+    </div>
+
+    <!-- JavaScript for handling chat functionality -->
+    <!-- <script>
+        const messageContainer = document.getElementById("chatMessages");
+        const messageInput = document.getElementById("messageInput");
+
+        // Function to add a new message to the chat
+        function addMessage(message) {
+            const messageElement = document.createElement("div");
+            messageElement.textContent = message;
+            messageContainer.appendChild(messageElement);
+        }
+
+        // Event listener for sending messages
+        messageInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                const message = messageInput.value;
+                if (message.trim() !== "") {
+                    addMessage(`You: ${message}`);
+                    // You can send the message to a server or other users here
+                    messageInput.value = "";
+                }
+            }
+        });
+    </script> -->
+</body>
+</html>
