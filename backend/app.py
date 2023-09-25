@@ -243,6 +243,17 @@ def lsa():
 def appointments():
     if request.method == "GET":
         return render_template('appointments.html')
+    
+@app.route('/l2u', methods=['GET', 'POST'])
+def l2u():
+    if request.method == "GET":
+        return render_template('l2u.html')
+    
+    
+@app.route('/profile', methods=['GET', 'POST'])
+def profile():
+    if request.method == "GET":
+        return render_template('profile.html')
 
 
 

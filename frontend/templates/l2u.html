@@ -1,0 +1,16 @@
+{% extends "baseDash.html" %}
+
+{% block content %}
+<div class="live-chat container">
+    <div class="chat-header">
+        <h1>Live Chat</h1>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+        <!-- Chat messages will be displayed here -->
+    </div>
+    <div class="chat-input">
+        <input type="text" class="message-input" id="message-input" placeholder="Type a message...">
+        <button class="send-button" id="send-button">Send</button>
+    </div>
+</div>
+{% endblock %}

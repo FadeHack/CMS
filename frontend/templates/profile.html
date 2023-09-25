@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-</head>
-<body>
+{% extends "baseDash.html" %}
+{% block content %}
     <div class="container">
     
         <h1 class="text-center mt-3">Lawyer Profile</h1>
@@ -127,9 +121,8 @@
             $('#editLawyerModal').modal('hide');
         });
     </script>
-    
-</body>
-</html>
 
+
+    {% endblock %}
 
 
