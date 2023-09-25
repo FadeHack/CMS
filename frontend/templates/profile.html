@@ -1,8 +1,15 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
     <div class="container">
-
+    
         <h1 class="text-center mt-3">Lawyer Profile</h1>
-
+    
         <header>
           <div class="profile-section">
             <img src="#" alt="Profile Picture" class="profile-picture mr-2">
@@ -13,7 +20,7 @@
           <h5>Gender: Female</h5>
            </div>
           </div>
-
+    
         <!-- Lawyer Profile Card -->
         <div class="card mt-4">
             <div class="card-body">
@@ -29,7 +36,7 @@
                 <button class="btn btn-primary" onclick="editProfile()">Edit Profile</button>
             </div>
         </div>
-
+    
         <!-- Edit Profile Modal -->
         <div class="modal fade" id="editLawyerModal" tabindex="-1" role="dialog" aria-labelledby="editLawyerModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -81,12 +88,12 @@
             </div>
         </div>
     </div>
-
+    
     <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    
     <script>
         function editProfile() {
             // Populate modal fields with current data
@@ -98,11 +105,11 @@
             $('#editLawyerCountry').val($('#lawyerCountry').text());
             $('#editLawyerState').val($('#lawyerState').text());
             $('#editLawyerPincode').val($('#lawyerPincode').text());
-
+    
             // Show the modal
             $('#editLawyerModal').modal('show');
         }
-
+    
         // Handle form submission
         $('#lawyerForm').submit(function (e) {
             e.preventDefault();
@@ -115,9 +122,14 @@
             $('#lawyerCountry').text($('#editLawyerCountry').val());
             $('#lawyerState').text($('#editLawyerState').val());
             $('#lawyerPincode').text($('#editLawyerPincode').val());
-
+    
             // Close the modal
             $('#editLawyerModal').modal('hide');
         });
     </script>
+    
+</body>
+</html>
+
+
 

@@ -56,13 +56,13 @@ def index():
         {
             'title': 'Case Status',
             'description': 'Check status of your case here',
-            'image': 'hammer.jpg',
+            'image': 'a2.jpg',
             'link': '#',
         },
         {
             'title': 'Case Registration',
             'description': 'Description of Feature 2.',
-            'image': 'hammer.jpg',
+            'image': 'a1.jpg',
             'link': '#',
         },
         {
@@ -72,21 +72,21 @@ def index():
             'link': '#',
         },
         {
-            'title': 'Feature 3',
+            'title': 'Feature 4',
+            'description': 'Description of Feature 3.',
+            'image': 'a3.jpg',
+            'link': '#',
+        },
+        {
+            'title': 'Feature 5',
             'description': 'Description of Feature 3.',
             'image': 'hammer.jpg',
             'link': '#',
         },
         {
-            'title': 'Feature 3',
+            'title': 'Feature 6',
             'description': 'Description of Feature 3.',
-            'image': 'hammer.jpg',
-            'link': '#',
-        },
-        {
-            'title': 'Feature 3',
-            'description': 'Description of Feature 3.',
-            'image': 'hammer.jpg',
+            'image': 'a1.jpg',
             'link': '#',
         },
         
@@ -233,6 +233,16 @@ def dashboard():
 def yourCases():
     if request.method == "GET":
         return render_template('yourCases.html')
+    
+@app.route('/las', methods=['GET', 'POST'])
+def lsa():
+    if request.method == "GET":
+        return render_template('legal_advisor_search.html')
+    
+@app.route('/appoint', methods=['GET', 'POST'])
+def appointments():
+    if request.method == "GET":
+        return render_template('appointments.html')
 
 
 

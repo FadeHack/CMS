@@ -1,0 +1,36 @@
+/* Styles for the Appointments Page */
+.appointments {
+    text-align: center;
+    padding: 20px;
+}
+
+.appointments h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333; /* Dark text color */
+}
+
+.appointment-filters {
+    margin: 20px 0;
+}
+
+.appointment-filters button {
+    background-color: #11486b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.appointment-filters button:hover {
+    background-color: #0a3d5d; /* Darker shade on hover */
+}
+
+.calendar-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
