@@ -1,0 +1,56 @@
+.case-mitigation-registration {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.case-mitigation-registration h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.case-mitigation-registration .form-group {
+    margin-bottom: 20px;
+}
+
+.case-mitigation-registration label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.case-mitigation-registration input[type="text"],
+.case-mitigation-registration input[type="date"],
+.case-mitigation-registration select,
+.case-mitigation-registration textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.case-mitigation-registration textarea {
+    height: 150px;
+}
+
+.case-mitigation-registration input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.case-mitigation-registration .submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3061e5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}

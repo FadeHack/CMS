@@ -62,31 +62,31 @@ def index():
         {
             'title': 'Case Registration',
             'description': 'Description of Feature 2.',
-            'image': 'a1.jpg',
+            'image': 'a5.jpg',
             'link': '#',
         },
         {
-            'title': 'Feature 3',
+            'title': 'Hearing Dates',
+            'description': 'Description of Feature 3.',
+            'image': 'a4.jpg',
+            'link': '#',
+        },
+        {
+            'title': 'CNR Search',
+            'description': 'Description of Feature 3.',
+            'image': 'a6.jpg',
+            'link': '#',
+        },
+        {
+            'title': 'Lawyers',
             'description': 'Description of Feature 3.',
             'image': 'hammer.jpg',
             'link': '#',
         },
         {
-            'title': 'Feature 4',
+            'title': 'Courts',
             'description': 'Description of Feature 3.',
             'image': 'a3.jpg',
-            'link': '#',
-        },
-        {
-            'title': 'Feature 5',
-            'description': 'Description of Feature 3.',
-            'image': 'hammer.jpg',
-            'link': '#',
-        },
-        {
-            'title': 'Feature 6',
-            'description': 'Description of Feature 3.',
-            'image': 'a1.jpg',
             'link': '#',
         },
         
@@ -175,6 +175,34 @@ def register():
             return redirect(url_for('login'))
 
     return render_template('register.html')
+
+@app.route('/caseMitReg', methods=['GET', 'POST'])
+def preTrialRegistration():
+    if request.method == 'POST':
+        case_name = request.form['case_name']
+        case_type = request.form['case_type']
+        conference_date = request.form['conference_date']
+        case_notes = request.form['case_notes']
+        # Process and save attachments as needed
+
+        # You can create a dictionary with this data and insert it into your database
+        registration_data = {
+            'case_name': case_name,
+            'case_type': case_type,
+            'conference_date': conference_date,
+            'case_notes': case_notes,
+            # Add more fields for attachments if required
+        }
+
+        # Insert the data into your database
+        result = case_collection.insert_one(registration_data)
+        inserted_id = result.inserted_id
+
+        flash('Registration successful', 'success')
+        # You can redirect to a success page or dashboard as needed
+        return redirect(url_for('dashboard'))
+    
+    return render_template("caseMitReg.html")
 
 
 @app.route('/caseReg', methods=['GET', 'POST'])
